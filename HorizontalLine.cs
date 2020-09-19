@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 namespace snake
 {
-    public class HorizontalLine
+    public class HorizontalLine : Figure
     {
-        List<Point> pList;
 
         public HorizontalLine(int xBegin, int xEnd, int y, char sym)
         {
@@ -16,15 +15,6 @@ namespace snake
                 pList.Add(p);
             }
         }
-
-        public  void Draw()
-        {
-            foreach (Point p in pList)
-            {
-                p.Draw();
-            }
-        }
-
         
     }
 }
