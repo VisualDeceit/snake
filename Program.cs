@@ -8,11 +8,19 @@ namespace snake
         static void Main(string[] args)
         {
 
-            HorizontalLine hLine = new HorizontalLine(2, 10, 1, '+');
-            hLine.Draw();
+            //Console.SetBufferSize(80, 25);
 
-            VerticalLine vLine = new VerticalLine(1, 10, 2, '+');
-            vLine.Draw();
+            HorizontalLine upLine = new HorizontalLine(0, 78, 0, '-');
+            upLine.Draw();
+
+            HorizontalLine downLine = new HorizontalLine(0, 78, 24, '-');
+            downLine.Draw();
+
+            VerticalLine leftLine = new VerticalLine(0, 24, 0, '|');
+            leftLine.Draw();
+
+            VerticalLine rightLine = new VerticalLine(0, 24, 78, '|');
+            rightLine.Draw();
 
             Console.ReadLine();
 
