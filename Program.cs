@@ -8,25 +8,11 @@ namespace snake
         static void Main(string[] args)
         {
 
-            Point p1 = new Point(1, 2, '*');
+            HorizontalLine hLine = new HorizontalLine(2, 10, 1, '+');
+            hLine.Draw();
 
-            Point p2 = new Point(3, 4, '#') ;
-
-            Point p3 = new Point(5, 6, '$');
-
-            Point p4 = new Point(7, 8, '%');
-
-            List<Point> pList = new List<Point>();
-            pList.Add(p1);
-            pList.Add(p2);
-            pList.Add(p3);
-            pList.Add(p4);
-
-            foreach (Point p in pList)
-            {
-                p.Draw();
-            }
-
+            VerticalLine vLine = new VerticalLine(1, 10, 2, '+');
+            vLine.Draw();
 
             Console.ReadLine();
 
