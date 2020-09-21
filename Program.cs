@@ -28,13 +28,26 @@ namespace snake
             snake.Draw();
 
 
+            Food foodField= new Food(78, 24, '$');
+            Point food = foodField.Create();
+            food.Draw();
+
             while (true)
             {
                 if (Console.KeyAvailable){
                     snake.KeyHandle(Console.ReadKey().Key);
                 }
+
+                if (snake.Eat(food))
+                {
+                    food = foodField.Create();
+                    food.Draw();
+                } else
+                {
+                    snake.Move();
+                }
                 Thread.Sleep(100);
-                snake.Move();
+                //snake.Move();
             }
 
            // Console.ReadLine();
