@@ -6,7 +6,7 @@ namespace snake
 {
     public class Snake: Figure
     {
-        Directions direction;
+         Directions direction;
 
         public Snake(Point tail, int length, Directions _direction)
         {
@@ -41,6 +41,27 @@ namespace snake
             Point p = new Point(pList.Last());
             p.Move(1, direction);
             return p;
+        }
+
+        public void KeyHandle(ConsoleKey key)
+        {
+            switch (key)
+            {
+                case ConsoleKey.LeftArrow:
+                    direction = Directions.LEFT;
+                    break;
+                case ConsoleKey.RightArrow:
+                    direction = Directions.RIGTH;
+                    break;
+                case ConsoleKey.UpArrow:
+                    direction = Directions.UP;
+                    break;
+                case ConsoleKey.DownArrow:
+                    direction = Directions.DOWN;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

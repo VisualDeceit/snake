@@ -26,30 +26,18 @@ namespace snake
             Point pBegin = new Point(39, 12, '*');
             Snake snake = new Snake(pBegin, 3, Directions.RIGTH);
             snake.Draw();
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
 
-            Console.ReadLine();
+
+            while (true)
+            {
+                if (Console.KeyAvailable){
+                    snake.KeyHandle(Console.ReadKey().Key);
+                }
+                Thread.Sleep(100);
+                snake.Move();
+            }
+
+           // Console.ReadLine();
 
         }
 
