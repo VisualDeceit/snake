@@ -11,17 +11,22 @@ namespace snake
 
             //Console.SetBufferSize(80, 25);
 
-            HorizontalLine upLine = new HorizontalLine(0, 78, 0, '-');
-            upLine.Draw();
+            Figure upLine = new HorizontalLine(0, 78, 0, '-');
+            Figure downLine = new HorizontalLine(0, 78, 24, '-');
+            Figure leftLine = new VerticalLine(0, 24, 0, '|');
+            Figure rightLine = new VerticalLine(0, 24, 78, '|');
 
-            HorizontalLine downLine = new HorizontalLine(0, 78, 24, '-');
-            downLine.Draw();
+            List<Figure> figureList = new List<Figure>();
+            figureList.Add(upLine);
+            figureList.Add(downLine);
+            figureList.Add(leftLine);
+            figureList.Add(rightLine);
 
-            VerticalLine leftLine = new VerticalLine(0, 24, 0, '|');
-            leftLine.Draw();
 
-            VerticalLine rightLine = new VerticalLine(0, 24, 78, '|');
-            rightLine.Draw();
+            foreach (Figure f in figureList)
+            {
+                f.Draw();
+            }
 
             Point pBegin = new Point(39, 12, '*');
             Snake snake = new Snake(pBegin, 3, Directions.RIGTH);
