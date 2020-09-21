@@ -40,15 +40,21 @@ namespace snake
                     x -= offset;
                     break;
                 case Directions.UP:
-                    y += offset;
+                    y -= offset;
                     break;
                 case Directions.DOWN:
-                    y -= offset;
+                    y += offset;
                     break;
                 default:
                     break;
 
             }
+        }
+
+        internal void Clear()
+        {
+            sym = ' ';
+            Draw();
         }
 
         public override string ToString()
